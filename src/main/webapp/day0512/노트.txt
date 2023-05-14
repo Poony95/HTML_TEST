@@ -1,0 +1,17 @@
+사용자 한테 고객명을 입력받아 
+	그 그고객이 주문한 도서목록을 출력하는 
+	웹 문서를 만들어 봅니다.
+	
+	select * from book 
+	where bookid in (select bookid from orders 
+						where custid in (
+							select custid from 
+							customer where name=?
+						));						
+						
+	select * from book 
+	where bookid in (select bookid from orders 
+						where custid in (
+							select custid from 
+							customer where name='박지성'
+						));							
